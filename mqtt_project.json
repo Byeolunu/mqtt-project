@@ -1,0 +1,270 @@
+[
+    {
+        "id": "56a075eed90b9475",
+        "type": "tab",
+        "label": "MQTT project",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "53e0afaf2b091f6a",
+        "type": "ui_template",
+        "z": "56a075eed90b9475",
+        "group": "home_group",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<div>\n    <svg width=\"900\" height=\"620\" viewBox=\"0 0 580 430\" xmlns=\"http://www.w3.org/2000/svg\">\n  <title>Smart home floor plan</title>\n  <desc>Interactive floor plan with status indicators for lighting, TV, AC, heating, door and fridge</desc>\n\n  <style>\n    .rl { font-family: Arial, sans-serif; font-size: 12px; font-weight: 600; }\n    .badge-txt { font-family: Arial, sans-serif; font-size: 8px; font-weight: 600; }\n    .tiny { font-family: Arial, sans-serif; font-size: 7px; }\n    .small { font-family: Arial, sans-serif; font-size: 6px; }\n  </style>\n\n  <!-- floor base -->\n  <rect x=\"20\" y=\"20\" width=\"540\" height=\"400\" rx=\"6\" fill=\"#EFEDE8\"/>\n\n  <!-- room fills -->\n  <rect id=\"rf-living\"   x=\"20\"  y=\"20\"  width=\"230\" height=\"200\" fill=\"#E8F0F8\"/>\n  <rect id=\"rf-bedroom\"  x=\"250\" y=\"20\"  width=\"310\" height=\"200\" fill=\"#EDEBF7\"/>\n  <rect id=\"rf-kitchen\"  x=\"20\"  y=\"220\" width=\"175\" height=\"200\" fill=\"#FDF3E3\"/>\n  <rect id=\"rf-bath\"     x=\"195\" y=\"220\" width=\"140\" height=\"200\" fill=\"#F8EDF4\"/>\n  <rect id=\"rf-office\"   x=\"335\" y=\"220\" width=\"225\" height=\"200\" fill=\"#E4F3EE\"/>\n\n  <!-- inner walls -->\n  <line x1=\"250\" y1=\"20\"  x2=\"250\" y2=\"220\" stroke=\"#A8A59C\" stroke-width=\"2.5\"/>\n  <line x1=\"20\"  y1=\"220\" x2=\"560\" y2=\"220\" stroke=\"#A8A59C\" stroke-width=\"2.5\"/>\n  <line x1=\"195\" y1=\"220\" x2=\"195\" y2=\"420\" stroke=\"#A8A59C\" stroke-width=\"2.5\"/>\n  <line x1=\"335\" y1=\"220\" x2=\"335\" y2=\"420\" stroke=\"#A8A59C\" stroke-width=\"2.5\"/>\n\n  <!-- outer walls -->\n  <rect x=\"20\" y=\"20\" width=\"540\" height=\"400\" rx=\"6\" fill=\"none\" stroke=\"#6E6C67\" stroke-width=\"3\"/>\n\n  <!-- doors -->\n  <rect x=\"96\"  y=\"218\" width=\"40\" height=\"5\" fill=\"#EFEDE8\"/>\n  <path d=\"M96 220 Q116 200 136 220\" fill=\"none\" stroke=\"#A8A59C\" stroke-width=\"1.2\" stroke-dasharray=\"4,2\"/>\n  <rect x=\"247\" y=\"108\" width=\"5\"  height=\"40\" fill=\"#EDEBF7\"/>\n  <path d=\"M250 108 Q270 108 250 148\" fill=\"none\" stroke=\"#A8A59C\" stroke-width=\"1.2\" stroke-dasharray=\"4,2\"/>\n  <rect x=\"192\" y=\"298\" width=\"5\"  height=\"38\" fill=\"#FDF3E3\"/>\n  <path d=\"M195 298 Q215 298 195 336\" fill=\"none\" stroke=\"#A8A59C\" stroke-width=\"1.2\" stroke-dasharray=\"4,2\"/>\n  <rect x=\"332\" y=\"285\" width=\"5\"  height=\"38\" fill=\"#E4F3EE\"/>\n  <path d=\"M335 285 Q355 285 335 323\" fill=\"none\" stroke=\"#A8A59C\" stroke-width=\"1.2\" stroke-dasharray=\"4,2\"/>\n\n  \n\n  <!-- ══ LIVING ROOM FURNITURE ══ -->\n  <!-- TV unit (dark bar on top wall) -->\n  <rect x=\"28\"  y=\"30\"  width=\"80\" height=\"12\" rx=\"2\" fill=\"#444441\"/>\n  <rect x=\"30\"  y=\"32\"  width=\"76\" height=\"8\"  rx=\"1\" fill=\"#1a1a2e\"/>\n  <!-- sofa -->\n  <rect x=\"36\"  y=\"145\" width=\"105\" height=\"50\" rx=\"5\" fill=\"#B5D4F4\" stroke=\"#85B7EB\" stroke-width=\"0.8\"/>\n  <rect x=\"36\"  y=\"145\" width=\"105\" height=\"14\" rx=\"4\" fill=\"#85B7EB\"/>\n  <rect x=\"36\"  y=\"145\" width=\"13\"  height=\"50\" rx=\"4\" fill=\"#85B7EB\"/>\n  <rect x=\"128\" y=\"145\" width=\"13\"  height=\"50\" rx=\"4\" fill=\"#85B7EB\"/>\n  <rect x=\"150\" y=\"110\" width=\"50\"  height=\"85\" rx=\"5\" fill=\"#B5D4F4\" stroke=\"#85B7EB\" stroke-width=\"0.8\"/>\n  <rect x=\"150\" y=\"110\" width=\"50\"  height=\"14\" rx=\"4\" fill=\"#85B7EB\"/>\n  <rect x=\"150\" y=\"110\" width=\"13\"  height=\"85\" rx=\"4\" fill=\"#85B7EB\"/>\n  <!-- coffee table -->\n  <rect x=\"60\"  y=\"110\" width=\"76\"  height=\"30\" rx=\"4\" fill=\"#D3D1C7\" stroke=\"#B4B2A9\" stroke-width=\"0.7\"/>\n  <!-- rug -->\n  <rect x=\"46\"  y=\"100\" width=\"106\" height=\"90\" rx=\"7\" fill=\"#7F77DD\" fill-opacity=\"0.12\" stroke=\"#534AB7\" stroke-width=\"0.5\" stroke-dasharray=\"3,3\"/>\n  <!-- bookshelf -->\n  <rect x=\"198\" y=\"30\"  width=\"44\"  height=\"55\" rx=\"2\" fill=\"#D3D1C7\" stroke=\"#B4B2A9\" stroke-width=\"0.7\"/>\n  <line x1=\"198\" y1=\"48\" x2=\"242\" y2=\"48\" stroke=\"#B4B2A9\" stroke-width=\"0.5\"/>\n  <line x1=\"198\" y1=\"66\" x2=\"242\" y2=\"66\" stroke=\"#B4B2A9\" stroke-width=\"0.5\"/>\n  <rect x=\"202\" y=\"50\" width=\"6\"  height=\"13\" rx=\"1\" fill=\"#E24B4A\" fill-opacity=\"0.55\"/>\n  <rect x=\"210\" y=\"52\" width=\"5\"  height=\"11\" rx=\"1\" fill=\"#378ADD\" fill-opacity=\"0.55\"/>\n  <rect x=\"217\" y=\"49\" width=\"7\"  height=\"14\" rx=\"1\" fill=\"#1D9E75\" fill-opacity=\"0.55\"/>\n  <rect x=\"226\" y=\"51\" width=\"6\"  height=\"12\" rx=\"1\" fill=\"#BA7517\" fill-opacity=\"0.55\"/>\n  <!-- window living -->\n  <rect x=\"20\"  y=\"80\"  width=\"7\"  height=\"55\" rx=\"2\" fill=\"#B5D4F4\" stroke=\"#378ADD\" stroke-width=\"0.7\"/>\n  <line x1=\"20\" y1=\"107\" x2=\"27\" y2=\"107\" stroke=\"#378ADD\" stroke-width=\"0.5\"/>\n  <!-- plant -->\n  <circle cx=\"227\" cy=\"195\" r=\"9\"  fill=\"#97C459\" fill-opacity=\"0.65\"/>\n  <circle cx=\"221\" cy=\"200\" r=\"6\"  fill=\"#639922\" fill-opacity=\"0.6\"/>\n  <rect x=\"222\"  y=\"202\" width=\"7\" height=\"9\" rx=\"2\" fill=\"#BA7517\" fill-opacity=\"0.65\"/>\n\n  <!-- ══ BEDROOM FURNITURE ══ -->\n  <rect x=\"370\" y=\"42\"  width=\"155\" height=\"138\" rx=\"6\" fill=\"#C9C3F0\" stroke=\"#7F77DD\" stroke-width=\"0.8\"/>\n  <rect x=\"370\" y=\"42\"  width=\"155\" height=\"30\"  rx=\"5\" fill=\"#AFA9EC\" stroke=\"#7F77DD\" stroke-width=\"0.8\"/>\n  <rect x=\"382\" y=\"49\"  width=\"48\"  height=\"16\"  rx=\"7\" fill=\"#EEEDFE\" stroke=\"#AFA9EC\" stroke-width=\"0.7\"/>\n  <rect x=\"443\" y=\"49\"  width=\"48\"  height=\"16\"  rx=\"7\" fill=\"#EEEDFE\" stroke=\"#AFA9EC\" stroke-width=\"0.7\"/>\n  <rect x=\"375\" y=\"135\" width=\"145\" height=\"38\"  rx=\"3\" fill=\"#EEEDFE\" stroke=\"#AFA9EC\" stroke-width=\"0.6\"/>\n  <line x1=\"375\" y1=\"143\" x2=\"520\" y2=\"143\" stroke=\"#AFA9EC\" stroke-width=\"0.5\"/>\n  <!-- bedside tables -->\n  <rect x=\"340\" y=\"64\"  width=\"28\"  height=\"28\"  rx=\"3\" fill=\"#D3D1C7\" stroke=\"#B4B2A9\" stroke-width=\"0.7\"/>\n  <circle cx=\"354\" cy=\"78\" r=\"2.5\" fill=\"#888780\"/>\n  <rect x=\"528\" y=\"64\"  width=\"28\"  height=\"28\"  rx=\"3\" fill=\"#D3D1C7\" stroke=\"#B4B2A9\" stroke-width=\"0.7\"/>\n  <circle cx=\"542\" cy=\"78\" r=\"2.5\" fill=\"#888780\"/>\n  <!-- wardrobe -->\n  <rect x=\"254\" y=\"28\"  width=\"72\"  height=\"62\"  rx=\"3\" fill=\"#E8E6E0\" stroke=\"#B4B2A9\" stroke-width=\"0.7\"/>\n  <line x1=\"290\" y1=\"28\" x2=\"290\" y2=\"90\" stroke=\"#B4B2A9\" stroke-width=\"0.6\"/>\n  <circle cx=\"283\" cy=\"60\" r=\"2.5\" fill=\"#888780\"/>\n  <circle cx=\"297\" cy=\"60\" r=\"2.5\" fill=\"#888780\"/>\n  <!-- rug under bed -->\n  <rect x=\"356\" y=\"105\" width=\"182\" height=\"100\" rx=\"5\" fill=\"#7F77DD\" fill-opacity=\"0.1\" stroke=\"#534AB7\" stroke-width=\"0.4\" stroke-dasharray=\"4,3\"/>\n  <!-- window bedroom -->\n  <rect x=\"400\" y=\"22\"  width=\"70\"  height=\"7\"   rx=\"2\" fill=\"#B5D4F4\" stroke=\"#378ADD\" stroke-width=\"0.7\"/>\n  <line x1=\"435\" y1=\"22\" x2=\"435\" y2=\"29\" stroke=\"#378ADD\" stroke-width=\"0.5\"/>\n\n  <!-- ══ KITCHEN FURNITURE ══ -->\n  <rect x=\"27\"  y=\"228\" width=\"162\" height=\"24\"  rx=\"3\" fill=\"#EF9F27\" fill-opacity=\"0.4\" stroke=\"#BA7517\" stroke-width=\"0.7\"/>\n  <rect x=\"27\"  y=\"370\" width=\"162\" height=\"40\"  rx=\"3\" fill=\"#EF9F27\" fill-opacity=\"0.4\" stroke=\"#BA7517\" stroke-width=\"0.7\"/>\n  <rect x=\"124\" y=\"233\" width=\"32\"  height=\"14\"  rx=\"3\" fill=\"#B5D4F4\" stroke=\"#378ADD\" stroke-width=\"0.7\"/>\n  <circle cx=\"140\" cy=\"240\" r=\"3\" fill=\"#185FA5\" fill-opacity=\"0.7\"/>\n  <!-- fridge -->\n  <rect x=\"27\"  y=\"280\" width=\"34\"  height=\"58\"  rx=\"3\" fill=\"#E8E6E0\" stroke=\"#B4B2A9\" stroke-width=\"0.7\"/>\n  <line x1=\"27\" y1=\"310\" x2=\"61\" y2=\"310\" stroke=\"#B4B2A9\" stroke-width=\"0.5\"/>\n  <rect x=\"57\"  y=\"288\" width=\"3\"  height=\"14\"  rx=\"1\" fill=\"#B4B2A9\"/>\n  <rect x=\"57\"  y=\"315\" width=\"3\"  height=\"12\"  rx=\"1\" fill=\"#B4B2A9\"/>\n  <!-- stove -->\n  <rect x=\"54\"  y=\"373\" width=\"55\"  height=\"28\"  rx=\"2\" fill=\"#5F5E5A\" fill-opacity=\"0.45\"/>\n  <circle cx=\"65\"  cy=\"381\" r=\"6\" fill=\"none\" stroke=\"#888780\" stroke-width=\"1.2\"/>\n  <circle cx=\"65\"  cy=\"381\" r=\"2.5\" fill=\"#888780\" fill-opacity=\"0.5\"/>\n  <circle cx=\"80\"  cy=\"381\" r=\"6\" fill=\"none\" stroke=\"#888780\" stroke-width=\"1.2\"/>\n  <circle cx=\"80\"  cy=\"381\" r=\"2.5\" fill=\"#888780\" fill-opacity=\"0.5\"/>\n  <circle cx=\"65\"  cy=\"393\" r=\"5.5\" fill=\"none\" stroke=\"#888780\" stroke-width=\"1.1\"/>\n  <circle cx=\"80\"  cy=\"393\" r=\"5.5\" fill=\"none\" stroke=\"#888780\" stroke-width=\"1.1\"/>\n  <!-- dining table -->\n  <rect x=\"96\"  y=\"294\" width=\"80\"  height=\"54\"  rx=\"4\" fill=\"#D3D1C7\" stroke=\"#888780\" stroke-width=\"0.7\"/>\n  <rect x=\"100\" y=\"282\" width=\"18\"  height=\"13\"  rx=\"3\" fill=\"#B4B2A9\" stroke=\"#888780\" stroke-width=\"0.6\"/>\n  <rect x=\"122\" y=\"282\" width=\"18\"  height=\"13\"  rx=\"3\" fill=\"#B4B2A9\" stroke=\"#888780\" stroke-width=\"0.6\"/>\n  <rect x=\"144\" y=\"282\" width=\"18\"  height=\"13\"  rx=\"3\" fill=\"#B4B2A9\" stroke=\"#888780\" stroke-width=\"0.6\"/>\n  <rect x=\"100\" y=\"348\" width=\"18\"  height=\"13\"  rx=\"3\" fill=\"#B4B2A9\" stroke=\"#888780\" stroke-width=\"0.6\"/>\n  <rect x=\"122\" y=\"348\" width=\"18\"  height=\"13\"  rx=\"3\" fill=\"#B4B2A9\" stroke=\"#888780\" stroke-width=\"0.6\"/>\n  <rect x=\"144\" y=\"348\" width=\"18\"  height=\"13\"  rx=\"3\" fill=\"#B4B2A9\" stroke=\"#888780\" stroke-width=\"0.6\"/>\n  <!-- window kitchen -->\n  <rect x=\"20\"  y=\"260\" width=\"7\"   height=\"44\"  rx=\"2\" fill=\"#B5D4F4\" stroke=\"#378ADD\" stroke-width=\"0.7\"/>\n  <line x1=\"20\" y1=\"282\" x2=\"27\" y2=\"282\" stroke=\"#378ADD\" stroke-width=\"0.5\"/>\n\n  <!-- ══ BATHROOM FURNITURE ══ -->\n  <rect x=\"204\" y=\"305\" width=\"58\"  height=\"90\"  rx=\"16\" fill=\"#F4C0D1\" fill-opacity=\"0.55\" stroke=\"#D4537E\" stroke-width=\"0.8\"/>\n  <rect x=\"210\" y=\"313\" width=\"46\"  height=\"74\"  rx=\"12\" fill=\"#FBEAF0\" fill-opacity=\"0.8\"/>\n  <rect x=\"218\" y=\"305\" width=\"16\"  height=\"5\"   rx=\"2\" fill=\"#D4537E\" fill-opacity=\"0.55\"/>\n  <rect x=\"205\" y=\"230\" width=\"40\"  height=\"55\"  rx=\"7\" fill=\"#F4C0D1\" fill-opacity=\"0.45\" stroke=\"#D4537E\" stroke-width=\"0.8\"/>\n  <rect x=\"208\" y=\"230\" width=\"34\"  height=\"18\"  rx=\"4\" fill=\"#ED93B1\" fill-opacity=\"0.4\"/>\n  <ellipse cx=\"225\" cy=\"265\" rx=\"15\" ry=\"17\" fill=\"#FBEAF0\" stroke=\"#D4537E\" stroke-width=\"0.6\"/>\n  <rect x=\"280\" y=\"230\" width=\"46\"  height=\"34\"  rx=\"5\" fill=\"#F4C0D1\" fill-opacity=\"0.45\" stroke=\"#D4537E\" stroke-width=\"0.8\"/>\n  <ellipse cx=\"303\" cy=\"247\" rx=\"14\" ry=\"10\" fill=\"#FBEAF0\" stroke=\"#D4537E\" stroke-width=\"0.6\"/>\n  <circle cx=\"303\" cy=\"247\" r=\"2.5\" fill=\"#D4537E\" fill-opacity=\"0.6\"/>\n  <rect x=\"283\" y=\"222\" width=\"40\"  height=\"6\"   rx=\"2\" fill=\"#85B7EB\" fill-opacity=\"0.7\"/>\n\n  <!-- ══ OFFICE FURNITURE ══ -->\n  <rect x=\"344\" y=\"230\" width=\"130\" height=\"35\"  rx=\"3\" fill=\"#9FE1CB\" fill-opacity=\"0.5\" stroke=\"#1D9E75\" stroke-width=\"0.8\"/>\n  <rect x=\"454\" y=\"228\" width=\"35\"  height=\"130\" rx=\"3\" fill=\"#9FE1CB\" fill-opacity=\"0.5\" stroke=\"#1D9E75\" stroke-width=\"0.8\"/>\n  <rect x=\"362\" y=\"237\" width=\"55\"  height=\"20\"  rx=\"2\" fill=\"#444441\" fill-opacity=\"0.7\"/>\n  <rect x=\"384\" y=\"257\" width=\"9\"   height=\"4\"   rx=\"1\" fill=\"#5F5E5A\"/>\n  <rect x=\"360\" y=\"261\" width=\"50\"  height=\"9\"   rx=\"2\" fill=\"#888780\" fill-opacity=\"0.45\"/>\n  <circle cx=\"410\" cy=\"318\" r=\"23\"  fill=\"#5DCAA5\" fill-opacity=\"0.3\" stroke=\"#1D9E75\" stroke-width=\"0.8\"/>\n  <circle cx=\"410\" cy=\"318\" r=\"14\"  fill=\"#1D9E75\" fill-opacity=\"0.2\"/>\n  <rect x=\"344\" y=\"380\" width=\"90\"  height=\"34\"  rx=\"2\" fill=\"#D3D1C7\" stroke=\"#B4B2A9\" stroke-width=\"0.7\"/>\n  <line x1=\"344\" y1=\"396\" x2=\"434\" y2=\"396\" stroke=\"#B4B2A9\" stroke-width=\"0.5\"/>\n  <rect x=\"349\" y=\"383\" width=\"6\"   height=\"10\"  rx=\"1\" fill=\"#E24B4A\" fill-opacity=\"0.5\"/>\n  <rect x=\"357\" y=\"381\" width=\"7\"   height=\"12\"  rx=\"1\" fill=\"#378ADD\" fill-opacity=\"0.5\"/>\n  <rect x=\"366\" y=\"384\" width=\"5\"   height=\"9\"   rx=\"1\" fill=\"#1D9E75\" fill-opacity=\"0.5\"/>\n  <rect x=\"374\" y=\"382\" width=\"8\"   height=\"11\"  rx=\"1\" fill=\"#BA7517\" fill-opacity=\"0.5\"/>\n  <circle cx=\"536\" cy=\"245\" r=\"11\"  fill=\"#97C459\" fill-opacity=\"0.6\"/>\n  <circle cx=\"530\" cy=\"251\" r=\"7\"   fill=\"#639922\" fill-opacity=\"0.55\"/>\n  <rect x=\"530\"  y=\"253\" width=\"9\"  height=\"10\"  rx=\"2\" fill=\"#BA7517\" fill-opacity=\"0.6\"/>\n  <rect x=\"500\" y=\"355\" width=\"38\"  height=\"56\"  rx=\"3\" fill=\"#D3D1C7\" stroke=\"#B4B2A9\" stroke-width=\"0.7\"/>\n  <line x1=\"500\" y1=\"373\" x2=\"538\" y2=\"373\" stroke=\"#B4B2A9\" stroke-width=\"0.5\"/>\n  <line x1=\"500\" y1=\"391\" x2=\"538\" y2=\"391\" stroke=\"#B4B2A9\" stroke-width=\"0.5\"/>\n  <rect x=\"513\" y=\"365\" width=\"9\"   height=\"4\"   rx=\"1\" fill=\"#888780\"/>\n  <rect x=\"513\" y=\"383\" width=\"9\"   height=\"4\"   rx=\"1\" fill=\"#888780\"/>\n  <rect x=\"513\" y=\"400\" width=\"9\"   height=\"4\"   rx=\"1\" fill=\"#888780\"/>\n  <!-- window office -->\n  <rect x=\"553\" y=\"265\" width=\"7\"   height=\"70\"  rx=\"2\" fill=\"#B5D4F4\" stroke=\"#378ADD\" stroke-width=\"0.7\"/>\n  <line x1=\"553\" y1=\"300\" x2=\"560\" y2=\"300\" stroke=\"#378ADD\" stroke-width=\"0.5\"/>\n\n  <!-- ══ STATUS INDICATORS (id-addressable for JS/MQTT updates) ══ -->\n\n  <!-- LIGHTING overlays — set fill-opacity to 0.18 when ON -->\n  <rect id=\"light-living\"   x=\"20\"  y=\"20\"  width=\"230\" height=\"200\" fill=\"#FFF3B0\" fill-opacity=\"0\" pointer-events=\"none\"/>\n  <rect id=\"light-bedroom\"  x=\"250\" y=\"20\"  width=\"310\" height=\"200\" fill=\"#FFF3B0\" fill-opacity=\"0\" pointer-events=\"none\"/>\n  <rect id=\"light-kitchen\"  x=\"20\"  y=\"220\" width=\"175\" height=\"200\" fill=\"#FFF3B0\" fill-opacity=\"0\" pointer-events=\"none\"/>\n  <rect id=\"light-office\"   x=\"335\" y=\"220\" width=\"225\" height=\"200\" fill=\"#FFF3B0\" fill-opacity=\"0\" pointer-events=\"none\"/>\n\n  <!-- TV — set id=\"tv-playing\" opacity to 1 when ON -->\n  <g id=\"tv-playing\" opacity=\"0\">\n    <rect x=\"30\" y=\"32\" width=\"76\" height=\"8\" rx=\"1\" fill=\"#1565C0\"/>\n    <rect x=\"42\" y=\"34\" width=\"10\" height=\"4\" rx=\"1\" fill=\"#E3F2FD\" fill-opacity=\"0.9\"/>\n    <rect x=\"56\" y=\"34\" width=\"22\" height=\"2\" rx=\"1\" fill=\"#90CAF9\" fill-opacity=\"0.7\"/>\n    <rect x=\"56\" y=\"37\" width=\"14\" height=\"1.5\" rx=\"0.5\" fill=\"#90CAF9\" fill-opacity=\"0.4\"/>\n    <circle cx=\"88\" cy=\"36\" r=\"3\" fill=\"#EF9F27\" fill-opacity=\"0.8\"/>\n    <text x=\"68\" y=\"47\" text-anchor=\"middle\" class=\"tiny\" fill=\"#1D9E75\" font-weight=\"600\">TV ON</text>\n  </g>\n\n  <!-- FRONT DOOR open indicator — set opacity to 1 when unlocked/open -->\n  <g id=\"door-open\" opacity=\"0\">\n    <rect x=\"84\" y=\"412\" width=\"42\" height=\"4\" rx=\"2\" fill=\"#1D9E75\"/>\n    <path d=\"M84 418 Q105 398 126 418\" fill=\"none\" stroke=\"#1D9E75\" stroke-width=\"1.5\" stroke-dasharray=\"3,2\"/>\n    <text x=\"105\" y=\"410\" text-anchor=\"middle\" class=\"tiny\" fill=\"#1D9E75\" font-weight=\"600\">open</text>\n  </g>\n  <!-- front door closed state (default visible) -->\n  <rect id=\"door-closed\" x=\"84\" y=\"416\" width=\"42\" height=\"6\" rx=\"2\" fill=\"#6E6C67\"/>\n\n  <!-- AC badges — set opacity to 1 when AC is ON -->\n  <g id=\"ac-living\" opacity=\"0\">\n    <rect x=\"148\" y=\"46\" width=\"44\" height=\"15\" rx=\"4\" fill=\"#1D9E75\"/>\n    <text x=\"170\" y=\"57\" text-anchor=\"middle\" class=\"badge-txt\" fill=\"#E1F5EE\">AC ON</text>\n  </g>\n  <g id=\"ac-bedroom\" opacity=\"0\">\n    <rect x=\"468\" y=\"46\" width=\"44\" height=\"15\" rx=\"4\" fill=\"#1D9E75\"/>\n    <text x=\"490\" y=\"57\" text-anchor=\"middle\" class=\"badge-txt\" fill=\"#E1F5EE\">AC ON</text>\n  </g>\n\n  <!-- HEAT badges — set opacity to 1 when heating is ON -->\n  <g id=\"heat-living\" opacity=\"0\">\n    <rect x=\"148\" y=\"46\" width=\"54\" height=\"15\" rx=\"4\" fill=\"#E24B4A\"/>\n    <text x=\"175\" y=\"57\" text-anchor=\"middle\" class=\"badge-txt\" fill=\"#FCEBEB\">HEAT ON</text>\n  </g>\n  <g id=\"heat-bedroom\" opacity=\"0\">\n    <rect x=\"468\" y=\"46\" width=\"54\" height=\"15\" rx=\"4\" fill=\"#E24B4A\"/>\n    <text x=\"495\" y=\"57\" text-anchor=\"middle\" class=\"badge-txt\" fill=\"#FCEBEB\">HEAT ON</text>\n  </g>\n\n  <!-- FRIDGE temp badge — update text content with current temp -->\n  <g id=\"fridge-normal\">\n    <rect x=\"27\" y=\"342\" width=\"50\" height=\"15\" rx=\"4\" fill=\"#185FA5\"/>\n    <text id=\"fridge-temp\" x=\"52\" y=\"353\" text-anchor=\"middle\" class=\"badge-txt\" fill=\"#E6F1FB\">4°C</text>\n  </g>\n  <!-- FRIDGE warning — set opacity to 1 when temp too high -->\n  <g id=\"fridge-warn\" opacity=\"0\">\n    <rect x=\"27\" y=\"342\" width=\"50\" height=\"15\" rx=\"4\" fill=\"#E24B4A\"/>\n    <text x=\"52\" y=\"353\" text-anchor=\"middle\" class=\"badge-txt\" fill=\"#FCEBEB\">WARN!</text>\n  </g>\n\n  <!-- LEGEND bottom-right -->\n  <rect x=\"430\" y=\"398\" width=\"128\" height=\"18\" rx=\"3\" fill=\"#EFEDE8\" stroke=\"#C8C5BC\" stroke-width=\"0.5\"/>\n  <circle cx=\"440\" cy=\"407\" r=\"4\" fill=\"#EF9F27\"/>\n  <text x=\"447\" y=\"411\" class=\"small\" fill=\"#5C3A00\">Light on</text>\n  <circle cx=\"476\" cy=\"407\" r=\"4\" fill=\"#1D9E75\"/>\n  <text x=\"483\" y=\"411\" class=\"small\" fill=\"#0B3D28\">AC / open</text>\n  <circle cx=\"524\" cy=\"407\" r=\"4\" fill=\"#E24B4A\"/>\n  <text x=\"531\" y=\"411\" class=\"small\" fill=\"#5C0000\">Alert</text>\n\n\n  <!-- ROOM NAME PLAQUES -->\n  <rect x=\"45\"  y=\"22\" width=\"116\" height=\"20\" rx=\"4\" fill=\"#1B3A5C\" fill-opacity=\"0.82\"/>\n  <text x=\"103\" y=\"36\" text-anchor=\"middle\" class=\"rl\" fill=\"#E6F1FB\">Living room</text>\n\n  <rect x=\"340\" y=\"22\" width=\"90\"  height=\"20\" rx=\"4\" fill=\"#2D2070\" fill-opacity=\"0.82\"/>\n  <text x=\"385\" y=\"36\" text-anchor=\"middle\" class=\"rl\" fill=\"#EEEDFE\">Bedroom</text>\n\n  <rect x=\"34\"  y=\"222\" width=\"72\" height=\"20\" rx=\"4\" fill=\"#5C3A00\" fill-opacity=\"0.82\"/>\n  <text x=\"70\"  y=\"236\" text-anchor=\"middle\" class=\"rl\" fill=\"#FAEEDA\">Kitchen</text>\n\n  <rect x=\"203\" y=\"222\" width=\"86\" height=\"20\" rx=\"4\" fill=\"#5C1040\" fill-opacity=\"0.82\"/>\n  <text x=\"246\" y=\"236\" text-anchor=\"middle\" class=\"rl\" fill=\"#FBEAF0\">Bathroom</text>\n\n  <rect x=\"370\" y=\"222\" width=\"60\" height=\"20\" rx=\"4\" fill=\"#0B3D28\" fill-opacity=\"0.82\"/>\n  <text x=\"400\" y=\"236\" text-anchor=\"middle\" class=\"rl\" fill=\"#E1F5EE\">Office</text>\n\n</svg>\n\n\n    <svg id=\"house\">\n        <!-- example -->\n        <circle id=\"light-living\" cx=\"160\" cy=\"140\" r=\"50\" fill=\"yellow\" opacity=\"0\" />\n    </svg>\n</div>\n\n<script>\n    (function(scope) {\n\n  // MQTT updates from Node-RED → SVG\n  scope.$watch('msg', function(msg) {\n    if (!msg) return;\n\n    if (msg.topic === \"home/living/light\") {\n      const light = document.getElementById(\"light-living\");\n      light.style.opacity = (msg.payload === \"ON\") ? 0.8 : 0;\n    }\n  });\n\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [
+                "8a78b7a8ee15cfb2"
+            ]
+        ]
+    },
+    {
+        "id": "8a78b7a8ee15cfb2",
+        "type": "debug",
+        "z": "56a075eed90b9475",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "mqtt_in",
+        "type": "mqtt in",
+        "z": "56a075eed90b9475",
+        "name": "",
+        "topic": "home/#",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 170,
+        "y": 580,
+        "wires": [
+            [
+                "svg_update"
+            ]
+        ]
+    },
+    {
+        "id": "svg_update",
+        "type": "ui_template",
+        "z": "56a075eed90b9475",
+        "group": "home_group",
+        "name": "SVG UPDATE LOGIC",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<script>\n(function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (!msg) return;\n\n    // LIGHT\n    if (msg.topic === \"home/living/light\") {\n      document.getElementById(\"light-living\").style.fillOpacity = (msg.payload === \"ON\") ? 0.18 : 0;\n    }\n\n    // TV\n    if (msg.topic === \"home/tv\") {\n      document.getElementById(\"tv-playing\").style.opacity = (msg.payload === \"ON\") ? 1 : 0;\n    }\n\n    // AC\n    if (msg.topic === \"home/ac/living\") {\n      document.getElementById(\"ac-living\").style.opacity = (msg.payload === \"ON\") ? 1 : 0;\n    }\n\n    // HEAT\n    if (msg.topic === \"home/heat/living\") {\n      document.getElementById(\"heat-living\").style.opacity = (msg.payload === \"ON\") ? 1 : 0;\n    }\n\n    // FRIDGE TEMP\n    if (msg.topic === \"home/fridge/temp\") {\n      document.getElementById(\"fridge-temp\").textContent = msg.payload + \"°C\";\n\n      if (msg.payload > 8) {\n        document.getElementById(\"fridge-warn\").style.opacity = 1;\n      } else {\n        document.getElementById(\"fridge-warn\").style.opacity = 0;\n      }\n    }\n\n  });\n})(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 440,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "tv_switch",
+        "type": "ui_switch",
+        "z": "56a075eed90b9475",
+        "name": "TV",
+        "label": "TV ON/OFF",
+        "group": "home_group",
+        "order": 2,
+        "topic": "home/tv",
+        "onvalue": "ON",
+        "offvalue": "OFF",
+        "x": 170,
+        "y": 320,
+        "wires": [
+            [
+                "mqtt_out"
+            ]
+        ]
+    },
+    {
+        "id": "ac_switch",
+        "type": "ui_switch",
+        "z": "56a075eed90b9475",
+        "name": "AC",
+        "label": "AC Living",
+        "group": "home_group",
+        "order": 3,
+        "topic": "home/ac/living",
+        "onvalue": "ON",
+        "offvalue": "OFF",
+        "x": 170,
+        "y": 380,
+        "wires": [
+            [
+                "mqtt_out"
+            ]
+        ]
+    },
+    {
+        "id": "heat_switch",
+        "type": "ui_switch",
+        "z": "56a075eed90b9475",
+        "name": "Heat",
+        "label": "Heating Living",
+        "group": "home_group",
+        "order": 4,
+        "topic": "home/heat/living",
+        "onvalue": "ON",
+        "offvalue": "OFF",
+        "x": 170,
+        "y": 440,
+        "wires": [
+            [
+                "mqtt_out"
+            ]
+        ]
+    },
+    {
+        "id": "fridge_slider",
+        "type": "ui_slider",
+        "z": "56a075eed90b9475",
+        "name": "Fridge Temp",
+        "label": "Fridge Temp °C",
+        "group": "home_group",
+        "order": 5,
+        "topic": "home/fridge/temp",
+        "min": -5,
+        "max": 15,
+        "step": 1,
+        "x": 190,
+        "y": 500,
+        "wires": [
+            [
+                "mqtt_out"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt_out",
+        "type": "mqtt out",
+        "z": "56a075eed90b9475",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "mqtt_broker",
+        "x": 530,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "light_living_switch",
+        "type": "ui_switch",
+        "z": "56a075eed90b9475",
+        "name": "Living Light",
+        "label": "Living Light",
+        "tooltip": "",
+        "group": "home_group",
+        "order": 1,
+        "width": "",
+        "height": "",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "home/living/light",
+        "topicType": "str",
+        "onvalue": "ON",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": true,
+        "className": "",
+        "x": 190,
+        "y": 260,
+        "wires": [
+            [
+                "mqtt_out"
+            ]
+        ]
+    },
+    {
+        "id": "home_group",
+        "type": "ui_group",
+        "name": "svg image",
+        "tab": "home_tab",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "Local Broker",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 15,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "home_tab",
+        "type": "ui_tab",
+        "name": "Smart Home",
+        "icon": "dashboard"
+    },
+    {
+        "id": "832a2945f30cd214",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
