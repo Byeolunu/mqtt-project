@@ -154,8 +154,7 @@ mqtt/
 
 ## License
 
-[Your License Here]
-
+MIT
 ## Support
 
 For issues or questions, refer to:
